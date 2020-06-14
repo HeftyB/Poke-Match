@@ -130,22 +130,70 @@ const initialState = {
   
 export default function reducers (state = initialState, action) {
     switch (action.type) {
-        case "GET_DATA_START":
-          return {
-            ...state,
-            WHATEVER: "NEWSTATE"
+      case "FLIP_CARD":
+        let newwcard;
+        let newCards = state.cards.map( item => {
+          if (item.id === action.payload && !item.flipped) {
+            let newCard = { ...item, flipped: true };
+            newwcard = newCard;
+            return newCard
+          } else { return item}
+        })
+        return {
+          ...state,
+          currentlySelectedCards: [
+            ...state.currentlySelectedCards, newwcard
+          ],
+          cards: [newCards]
+        }
+        case "CHECK_CARDS":
+          // if (currentlySelectedCards[1]){return {...state}}
+          if (state.currentlySelectedCards[0] == state.currentlySelectedCards[1]){
+            return {
+              ...state,
+              totalScore: state.totalScore + 100,
+              currentlySelectedCards: []
+            }
+          } else {
+            newCards = state.cards.map( item => {
+              if (item.id === state.currentlySelectedCards[0].id || item.id === state.currentlySelectedCards[1].id) {
+                let newCard = {...item, flipped: false};
+                return newCard} else {return item}
+            });
+            return {
+              ...state,
+              cards: newCards,
+              currentlySelectedCards: []
+            }
           }
-        case "GET_DATA_SUCCESS":
-          return {
-            ...state,
-            WHATEVER: "NEWSTATE"
-          }
-        case "GET_DATA_FAIL":
-          return {
-            ...state,
-            WHATEVER: "NEWSTATE",
-            WHATEVER: "NEWSTATE"
-          }
+          case "CHECK_SCORE":
+            let done = true;
+            state.cards.forEach( item => {
+              if (!item.flipped) {
+                done = false;
+              }
+            });
+            return {
+              ...state, 
+              endGame: done
+            }
+          
+        // case "GET_DATA_START":
+        //   return {
+        //     ...state,
+        //     WHATEVER: "NEWSTATE"
+        //   }
+        // case "GET_DATA_SUCCESS":
+        //   return {
+        //     ...state,
+        //     WHATEVER: "NEWSTATE"
+        //   }
+        // case "GET_DATA_FAIL":
+        //   return {
+        //     ...state,
+        //     WHATEVER: "NEWSTATE",
+        //     WHATEVER: "NEWSTATE"
+        //   }
         default:
             return state;
     }
