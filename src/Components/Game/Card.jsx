@@ -7,6 +7,7 @@ export const Card = (props) => {
         <div
             className="card"
             onClick={() => {
+                console.log(props.card.flipped)
             props.flipCard(props.card.id);}}>
             <div
                 className="card-inner"

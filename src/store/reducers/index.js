@@ -131,6 +131,8 @@ const initialState = {
 export default function reducers (state = initialState, action) {
     switch (action.type) {
       case "FLIP_CARD":
+        console.log("flipCard")
+        console.log(state.cards)
         let newwcard;
         let newCards = state.cards.map( item => {
           if (item.id === action.payload && !item.flipped) {
@@ -139,62 +141,47 @@ export default function reducers (state = initialState, action) {
             return newCard
           } else { return item}
         })
+        console.log(newwcard)
         return {
           ...state,
-          currentlySelectedCards: [
-            ...state.currentlySelectedCards, newwcard
-          ],
-          cards: [newCards]
+          // currentlySelectedCards: [
+          //   ...state.currentlySelectedCards, newwcard
+          // ],
+          // cards: [newCards]
         }
-        case "CHECK_CARDS":
-          // if (currentlySelectedCards[1]){return {...state}}
-          if (state.currentlySelectedCards[0] == state.currentlySelectedCards[1]){
-            return {
-              ...state,
-              totalScore: state.totalScore + 100,
-              currentlySelectedCards: []
-            }
-          } else {
-            newCards = state.cards.map( item => {
-              if (item.id === state.currentlySelectedCards[0].id || item.id === state.currentlySelectedCards[1].id) {
-                let newCard = {...item, flipped: false};
-                return newCard} else {return item}
-            });
-            return {
-              ...state,
-              cards: newCards,
-              currentlySelectedCards: []
-            }
+      case "CHECK_CARDS":
+        console.log("checkCard")
+        // if (currentlySelectedCards[1]){return {...state}}
+        if (state.currentlySelectedCards[0] == state.currentlySelectedCards[1]){
+          return {
+            ...state,
+            totalScore: state.totalScore + 100,
+            currentlySelectedCards: []
           }
-          case "CHECK_SCORE":
-            let done = true;
-            state.cards.forEach( item => {
-              if (!item.flipped) {
-                done = false;
-              }
-            });
-            return {
-              ...state, 
-              endGame: done
-            }
-          
-        // case "GET_DATA_START":
-        //   return {
-        //     ...state,
-        //     WHATEVER: "NEWSTATE"
-        //   }
-        // case "GET_DATA_SUCCESS":
-        //   return {
-        //     ...state,
-        //     WHATEVER: "NEWSTATE"
-        //   }
-        // case "GET_DATA_FAIL":
-        //   return {
-        //     ...state,
-        //     WHATEVER: "NEWSTATE",
-        //     WHATEVER: "NEWSTATE"
-        //   }
-        default:
-            return state;
+        } else {
+          newCards = state.cards.map( item => {
+            if (item.id === state.currentlySelectedCards[0].id || item.id === state.currentlySelectedCards[1].id) {
+              let newCard = {...item, flipped: false};
+              return newCard} else {return item}
+          });
+          return {
+            ...state,
+            cards: newCards,
+            currentlySelectedCards: []
+          }
+        }
+      case "CHECK_SCORE":
+        let done = true;
+        state.cards.forEach( item => {
+          if (!item.flipped) {
+            done = false;
+          }
+        });
+        return {
+          ...state, 
+          endGame: done
+        }
+      default:
+          return state;
     }
 }
