@@ -130,58 +130,23 @@ const initialState = {
   
 export default function reducers (state = initialState, action) {
     switch (action.type) {
-      case "FLIP_CARD":
-        console.log("flipCard")
-        console.log(state.cards)
-        let newwcard;
-        let newCards = state.cards.map( item => {
-          if (item.id === action.payload && !item.flipped) {
-            let newCard = { ...item, flipped: true };
-            newwcard = newCard;
-            return newCard
-          } else { return item}
-        })
-        console.log(newwcard)
-        return {
-          ...state,
-          // currentlySelectedCards: [
-          //   ...state.currentlySelectedCards, newwcard
-          // ],
-          // cards: [newCards]
-        }
-      case "CHECK_CARDS":
-        console.log("checkCard")
-        // if (currentlySelectedCards[1]){return {...state}}
-        if (state.currentlySelectedCards[0] == state.currentlySelectedCards[1]){
+        case "GET_DATA_START":
           return {
             ...state,
-            totalScore: state.totalScore + 100,
-            currentlySelectedCards: []
+            WHATEVER: "NEWSTATE"
           }
-        } else {
-          newCards = state.cards.map( item => {
-            if (item.id === state.currentlySelectedCards[0].id || item.id === state.currentlySelectedCards[1].id) {
-              let newCard = {...item, flipped: false};
-              return newCard} else {return item}
-          });
+        case "GET_DATA_SUCCESS":
           return {
             ...state,
-            cards: newCards,
-            currentlySelectedCards: []
+            WHATEVER: "NEWSTATE"
           }
-        }
-      case "CHECK_SCORE":
-        let done = true;
-        state.cards.forEach( item => {
-          if (!item.flipped) {
-            done = false;
+        case "GET_DATA_FAIL":
+          return {
+            ...state,
+            WHATEVER: "NEWSTATE",
+            WHATEVER: "NEWSTATE"
           }
-        });
-        return {
-          ...state, 
-          endGame: done
-        }
-      default:
-          return state;
+        default:
+            return state;
     }
 }

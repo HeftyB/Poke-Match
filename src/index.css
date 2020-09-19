@@ -98,6 +98,7 @@ h1 {
     white 51%,
     yellow 59%
   );
+  color: white;
   transform: rotateY(180deg);
 }
 
