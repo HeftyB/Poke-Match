@@ -1,22 +1,17 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import Card from './Card';
+import React, { Component } from "react";
+import Card from "./Card";
 
-export const CardBoard = (props) => {
-    return (
-        <div className="board">
-        {props.cards.map(card => {
-          return <Card card={card} flipCard={props.flipCard} key={card.id} />;})}
-      </div>
-    )
-}
+const CardBoard = props => {
+	return (
+		<div className="board">
+			<div className="rubberBand">Pick a match</div>
+			{props.cards.map(card => {
+				return (
+					<Card card={card} flipCard={props.flipCard} key={card.id} />
+				);
+			})}
+		</div>
+	);
+};
 
-const mapStateToProps = (state) => ({
-    
-})
-
-const mapDispatchToProps = {
-    
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(CardBoard)
+export default CardBoard;
