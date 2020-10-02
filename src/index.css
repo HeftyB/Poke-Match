@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 * {
-	border: 1px solid black;
+	/* border: 1px solid black; */
 	font-family: "Press Start 2P", cursive;
 }
 
@@ -11,6 +11,7 @@ body {
 		"Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background-image: url("./Components/imgs/bg_bggenerator_com.png");
 }
 
 code {
@@ -29,15 +30,16 @@ h1 {
 }
 
 .wrapper {
-	background-color: #f4f4f4;
+	/* background-color: #f4f4f4; */
+	background-image: url("./Components/imgs/bg_bggenerator_com\ copy.png");
 	width: 80%;
 	margin: auto;
 }
 
 .board {
 	width: 100%;
-	max-width: 1200px;
-	margin: 20px;
+	max-width: 950px;
+	margin: auto;
 	padding: 20px;
 	display: flex;
 	flex-wrap: wrap;

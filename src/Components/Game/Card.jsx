@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import pokecard from "../pokecard.jpg";
-import blankcard from "../blank-pokemon-card.png";
+import pokecard from "../imgs/pokecard.jpg";
+import blankcard from "../imgs/blank-pokemon-card.png";
 
 const Card = props => {
 	return (

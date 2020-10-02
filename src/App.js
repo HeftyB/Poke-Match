@@ -13,6 +13,13 @@ BACKGROUND PATTERN / IMAGE ; MAYBE SOME BACKGRPOUND MUSIC
 SCALE GRID DEPENDENT ON SCREEN SIZE(SMALLER CARDS ON MOBILE)
 
 REACT SPRING
+
+background music
+sound effects when flipping / matching
+initial screen selection with difficulty / card total
+make a count down timer dependant on the difficulty 
+at the end of round have a point multipier for time left
+blink animation on timer in scoreboard
 */
 
 function App() {
@@ -44,7 +51,7 @@ function App() {
 	const checkCards = () => {
 		const [firstCard, secondCard] = currentSelected;
 		if (firstCard.name === secondCard.name) {
-			setScore(score + 20);
+			setScore(score + 1750);
 			checkScore();
 		} else {
 			const newCards = cards.map(card => {
@@ -76,8 +83,9 @@ function App() {
 	return (
 		<div className="App">
 			<div className="wrapper">
-				<h1>Poke'-Match Up!</h1>
 				<ScoreBoard gameWon={gameWon} score={score} />
+        <h1>Poke'-Match Up!</h1>
+        <h3>Find all matching pairs before time runs out!</h3>
 				<CardBoard cards={cards} flipCard={flipCard} />
 			</div>
 		</div>
