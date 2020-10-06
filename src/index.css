@@ -37,7 +37,7 @@ h1 {
 }
 
 .board {
-	width: 100%;
+	width: 80%;
 	max-width: 950px;
 	margin: auto;
 	padding: 20px;
@@ -49,8 +49,8 @@ h1 {
 
 .card {
 	background-color: transparent;
-	width: 110px;
-	height: 140px;
+	width: 90px;
+	height: 125px;
 	border-radius: 10px;
 	margin: 10px;
 }
@@ -215,5 +215,43 @@ h1 {
 	100% {
 		-webkit-transform: scale3d(1, 1, 1);
 		transform: scale3d(1, 1, 1);
+	}
+}
+
+@media(max-width: 600px) {
+
+	.card {
+		background-color: transparent;
+		width: 45px;
+		height: 60px;
+		border-radius: 10px;
+		margin: 10px;
+	}
+
+	.cardBack {
+		width: 40px;
+		border-radius: 5px;
+	}
+
+	.blank-card {
+		width: 40px;
+		border-radius: 5px;
+	}
+
+	.cardFront-innerBottom {
+		display: none;
+	}
+
+	.cardFront-innerTop img {
+		position: absolute;
+		top: -18px;
+		right: -30px;
+		/* right: 00px; */
+	}
+
+	.score-board-score {
+		/* color: #57f542; */
+		font-size: 80%;
+		/* font-weight: bold; */
 	}
 }
