@@ -31,9 +31,20 @@ h1 {
 
 .wrapper {
 	/* background-color: #f4f4f4; */
-	background-image: url("./Components/imgs/bg_bggenerator_com\ copy.png");
+	/* background-image: url("./Components/imgs/bg_bggenerator_com\ copy.png"); */
 	width: 80%;
 	margin: auto;
+	padding: 2%;
+	background-color: #57f542;
+	border-radius: 20px;
+}
+
+.innerWrapper {
+	background-image: url("./Components/imgs/pokemat-with-white.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	border-radius: 20px;
 }
 
 .board {
@@ -49,10 +60,10 @@ h1 {
 
 .card {
 	background-color: transparent;
-	width: 90px;
-	height: 125px;
+	width: 100px;
+	height: 135px;
 	border-radius: 10px;
-	margin: 10px;
+	margin: 15px;
 }
 
 .card-inner {
@@ -97,7 +108,7 @@ h1 {
 	height: 10vh;
 	background-color: black;
 	border: 5px solid red;
-	margin: 0% 10%;
+	margin: 0% 10% 5% 10%;
 	border-radius: 10px;
 	display: flex;
 	justify-content: center;
@@ -120,6 +131,18 @@ h1 {
 	}
 }
 
+.timerBoard {
+	height: 10vh;
+	background-color: black;
+	border: 5px solid red;
+	margin: 0% 10% 5% 10%;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: wheat;
+}
+
 .cardBack {
 	width: 90px;
 	border-radius: 5px;
@@ -137,8 +160,9 @@ h1 {
 
 .cardFront-innerTop img {
 	position: absolute;
-	top: 0px;
-	right: 00px;
+	top: 5px;
+	right: -12px;
+	width: 120px;
 }
 
 .cardFront-innerBottom {
@@ -244,9 +268,10 @@ h1 {
 
 	.cardFront-innerTop img {
 		position: absolute;
-		top: -18px;
-		right: -30px;
+		top: -15px;
+		right: -20px;
 		/* right: 00px; */
+		width: 80px;
 	}
 
 	.score-board-score {

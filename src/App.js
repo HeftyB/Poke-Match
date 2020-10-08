@@ -3,6 +3,7 @@ import "./App.css";
 import shit from "./tesst";
 import CardBoard from "./Components/Game/CardBoard";
 import ScoreBoard from "./Components/Score/ScoreBoard";
+import Timer from "./Components/Score/Timer";
 
 /*
 MAKE ANIMATIONS THAT SAY MOVE OR MATCH
@@ -83,10 +84,14 @@ function App() {
 	return (
 		<div className="App">
 			<div className="wrapper">
-				<ScoreBoard gameWon={gameWon} score={score} />
-        {/* <h1>Poke'-Match Up!</h1>
-        <h3>Find all matching pairs before time runs out!</h3> */}
-				<CardBoard cards={cards} flipCard={flipCard} />
+			<ScoreBoard gameWon={gameWon} score={score} />
+			<Timer/>
+				<div className="innerWrapper">
+					
+			{/* <h1>Poke'-Match Up!</h1>
+			<h3>Find all matching pairs before time runs out!</h3> */}
+					<CardBoard cards={cards} flipCard={flipCard} />
+				</div>
 			</div>
 		</div>
 	);

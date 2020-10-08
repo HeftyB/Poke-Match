@@ -9,7 +9,7 @@ export default function Score(props) {
 					GOT EM ALL, YOU WIN!
 				</h2>
 			) : (
-				<h2 className="score-board-score">TIMER: :31  SCORE:{props.score}</h2>
+				<h2 className="score-board-score">SCORE:{props.score}</h2>
 			)}
 		</div>
 	);

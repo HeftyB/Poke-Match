@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import pokecard from "../imgs/pokecard.jpg";
-import blankcard from "../imgs/blanks.png";
+import blankcard from "../imgs/card.png";
 
 const Card = props => {
 	return (
@@ -25,9 +25,9 @@ const Card = props => {
 
 							{/* {props.card.value} */}
 						</div>
-						<div className="cardFront-innerBottom">
+						{/* <div className="cardFront-innerBottom">
 							{props.card.name}
-						</div>
+						</div> */}
 					</div>
 				</div>
 				<div className="card-back">
