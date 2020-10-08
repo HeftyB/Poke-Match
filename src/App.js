@@ -26,6 +26,7 @@ blink animation on timer in scoreboard
 function App() {
 	const [cards, setCards] = useState(shit);
 	const [currentSelected, setCurrentSelected] = useState([]);
+	const [currentlySelected, setCurrentlySelected] = useState("");
 	const [gameWon, setGameWon] = useState(false);
 	const [score, setScore] = useState(0);
 
@@ -40,6 +41,7 @@ function App() {
 			if (card.id === id && !card.flipped) {
 				const newCard = { ...card, flipped: true };
 				setCurrentSelected([...currentSelected, newCard]);
+				setCurrentlySelected(card.name);
 				return newCard;
 			} else {
 				return card;
@@ -85,11 +87,8 @@ function App() {
 		<div className="App">
 			<div className="wrapper">
 			<ScoreBoard gameWon={gameWon} score={score} />
-			<Timer/>
+			<Timer currentlySelected={currentlySelected}/>
 				<div className="innerWrapper">
-					
-			{/* <h1>Poke'-Match Up!</h1>
-			<h3>Find all matching pairs before time runs out!</h3> */}
 					<CardBoard cards={cards} flipCard={flipCard} />
 				</div>
 			</div>

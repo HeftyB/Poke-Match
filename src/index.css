@@ -11,7 +11,9 @@ body {
 		"Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-image: url("./Components/imgs/bg_bggenerator_com.png");
+	/* background-image: url("./Components/imgs/bg_bggenerator_com.png"); */
+	background: rgb(255,222,0);
+	background: radial-gradient(circle, rgba(255,222,0,1) 28%, rgba(255,0,0,1) 55%, rgba(59,76,202,1) 72%);
 }
 
 code {
@@ -35,7 +37,7 @@ h1 {
 	width: 80%;
 	margin: auto;
 	padding: 2%;
-	background-color: #57f542;
+	/* background-color: #57f542; */
 	border-radius: 20px;
 }
 
@@ -106,8 +108,8 @@ h1 {
 
 .score-board {
 	height: 10vh;
-	background-color: black;
-	border: 5px solid red;
+	background-color: #FFDE08;
+	border: 5px solid black;
 	margin: 0% 10% 5% 10%;
 	border-radius: 10px;
 	display: flex;
@@ -116,7 +118,7 @@ h1 {
 }
 
 .score-board-score {
-	color: #57f542;
+	color: #CC0000;
 	font-size: 250%;
 	font-weight: bold;
 }
@@ -132,10 +134,36 @@ h1 {
 }
 
 .timerBoard {
-	height: 10vh;
-	background-color: black;
-	border: 5px solid red;
+	/* height: 10vh; */
+	/* background-color: black; */
+	/* border: 5px solid black; */
 	margin: 0% 10% 5% 10%;
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: wheat;
+}
+
+.timer {
+	height: 10vh;
+	width: 20%;
+	background-color: #3B4CCA;
+	border: 5px solid black;
+	/* margin: 0% 10% 5% 10%; */
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: wheat;
+}
+
+.names {
+	height: 10vh;
+	width: 40%;
+	background-color: #3B4CCA;
+	border: 5px solid black;
+	/* margin: 0% 10% 5% 10%; */
 	border-radius: 10px;
 	display: flex;
 	justify-content: center;

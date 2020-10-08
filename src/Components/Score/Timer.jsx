@@ -1,13 +1,16 @@
 import React from 'react'
-import Countdown from "react-countdown"
+import Countdown, { zeroPad } from "react-countdown"
 
-export default function Timer() {
+export default function Timer({currentlySelected}) {
     return (
         <div className="timerBoard">
             <div className="timer">
-                <Countdown date={Date.now() + 120000}/>
+                <Countdown date={Date.now() + 120000} daysInHours={true} zeroPadTime={0}/>
             </div>
-            Pokemon's Name
+            <div className="names">
+                {currentlySelected}
+            </div>
+            
         </div>
     )
 }
