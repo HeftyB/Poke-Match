@@ -6,6 +6,7 @@ const Card = props => {
 	return (
 		<div
 			className="card"
+			// on click flip card
 			onClick={() => {
 				props.flipCard(props.card.id);
 			}}>
@@ -16,20 +17,17 @@ const Card = props => {
 				}}>
 				<div className="card-front">
 					<div className="cardFront-inner">
+						{/* front of pokemon card + sprite */}
 						<img
 							src={blankcard}
 							className="blank-card"
 							alt="blank-card"></img>
 						<div className="cardFront-innerTop">
 							<img src={props.card.sprite} alt="sprite" />
-
-							{/* {props.card.value} */}
 						</div>
-						{/* <div className="cardFront-innerBottom">
-							{props.card.name}
-						</div> */}
 					</div>
 				</div>
+				{/* back pf pokemon card */}
 				<div className="card-back">
 					<img
 						src={pokecard}

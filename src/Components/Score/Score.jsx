@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-// import { connect } from 'react-redux'
 
 export default function Score(props) {
 	return (
 		<div className="score">
+			{/* RENDER GAME WON MESSAGE OR SCORE */}
 			{props.gameWon ? (
 				<h2 className="score-board-score winner">
 					GOT EM ALL, YOU WIN!
@@ -14,13 +14,3 @@ export default function Score(props) {
 		</div>
 	);
 }
-
-// const mapStateToProps = (state) => ({
-
-// })
-
-// const mapDispatchToProps = {
-
-// }
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Score)

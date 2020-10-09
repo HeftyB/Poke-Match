@@ -1,3 +1,4 @@
+// hardcoeded test data
 const cards = [
 	{
 		name: "bulbasaur",

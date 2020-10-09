@@ -2,16 +2,20 @@
 
 Concept:
 
--   This is a simple Memory / card match type game
+-   flip a card, if card matches earn points, game ends when all cards are matched
 
 Gameplay Options:
 
+-   planned for future releases
+
 Rules:
+
+-   in planned development
 
 ## Available Scripts
 
-### `npm start`
+-   `npm start`
 
-### `npm test`
+-   `npm test`
 
-### `npm run build`
+-   `npm run build`
