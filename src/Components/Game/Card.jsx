@@ -22,7 +22,6 @@ const Card = props => {
 							src={blankcard}
 							className="blank-card"
 							alt="blank-card"></img>
-						{/* sprite */}
 						<div className="cardFront-innerTop">
 							<img src={props.card.sprite} alt="sprite" />
 						</div>
